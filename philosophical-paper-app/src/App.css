@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 10px;
+  padding: 10px;
 }
+/* App.css or index.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page-overview {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px; /* or whatever width you prefer */
+  overflow-y: auto; /* allows scrolling within the navigation */
+  background-color: #f8f8f8; /* or any color that fits your design */
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Ensure it's above the main content but below the highlight button */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  height: calc(
+    100vh-20px
+  ); /* This will make it take up the full viewport height */
 }
 
-.App-link {
-  color: #61dafb;
+.main-text {
+  margin-left: 220px;
+  margin-right: 500px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.highlight {
+  background-color: lightyellow;
 }
+.highlight-page-number {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.highlighted-text {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 300px; /* or whatever width you prefer */
+  overflow-y: auto; /* allows scrolling within the highlights section */
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* Same z-index as .page-overview */
+}
+.highlight-snippet {
+  background-color: lightyellow; /* or any color you prefer for the snippets */
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds some depth with a shadow */
+  /* Any additional styling you want for the snippets */
+}
+
+.highlight-button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000; /* High z-index to ensure it's above other content */
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* Any additional styling you want for the button */
+}
+
+/* Continue with your existing styles */
